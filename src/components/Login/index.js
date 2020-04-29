@@ -13,11 +13,12 @@ class Login extends Component {
         this.entrar = this.entrar.bind(this)
         this.login = this.login.bind(this)
     }
-    componentDidMount(){
+    componentDidMount() {
         //Verifica se o usuário está logado
-        if(firebase.getCurrent()){
+        if (firebase.getCurrent()) {
             return this.props.history.replace('/dashboard')
         }
+        // firebase.logout()
     }
     entrar(e) {
         this.login()
@@ -27,6 +28,9 @@ class Login extends Component {
         const { email, password } = this.state
         try {
             await firebase.login(email, password)
+                .then(() => {
+                    this.props.history.replace('/dashboard')
+                })
                 .catch((error) => {
                     if (error.code === 'auth/user-not-found') {
                         alert('Usuário não encontrado!')
@@ -35,7 +39,6 @@ class Login extends Component {
                         return null
                     }
                 })
-                this.props.history.replace('/dashboard')
         } catch (error) {
             alert(error.message)
         }

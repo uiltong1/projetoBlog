@@ -32,13 +32,15 @@ class Firebase {
             nome: nome,
         })
     }
-
-    isIniatialized(){
-        return new Promise(resolve=>{
+    logout() {
+        return app.auth().signOut()
+    }
+    isIniatialized() {
+        return new Promise(resolve => {
             app.auth().onAuthStateChanged(resolve)
         })
     }
-    getCurrent(){
+    getCurrent() {
         return app.auth().currentUser && app.auth().currentUser.email
     }
 }

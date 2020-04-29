@@ -1,4 +1,9 @@
-form#login{
+div .register-h1{
+    margin-top: 30px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+form#register{
     width: 100%;
     max-width: 680px;
     margin: 30px auto 0;
@@ -8,27 +13,20 @@ form#login{
     display: flex;
     flex-direction: column;
 }
-form#login input{
+form#register input{
     margin-bottom: 15px;
     height: 40px;
     border-radius: 4px;
-    border: 1px solid #DDD;
     padding: 0 20px;
-    font-size: 14px;
+    border: 1px solid #DDD;
+    font-size: 15px;
 }
-form#login button{
+form#register button{
     padding: 10px 20px;
     border-radius: 4px;
     background: #272727;
-    border:0;
+    border: 0;
     color: #FFF;
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 16px;
     cursor: pointer;
-}
-form#login a{
-    text-align: center;
-    text-decoration: none;
-    color: #272727;
-    font-size: 15px;
 }
