@@ -21,6 +21,7 @@ class Home extends Component {
                     image: item.val().image
                 })
             })
+            state.posts.reverse()
             this.setState(state)
             console.log(this.state.posts)
         })
